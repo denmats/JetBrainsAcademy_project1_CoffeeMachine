@@ -9,16 +9,31 @@ public class TSPFloydWarshall {
 
 
     public static void main(String[] args) {
+
+        //sample data to prove the algorithm working in the right order
+        //use letter A,B,C,D when you get questioned via algorithm
+        //"Where do you want to start from? Choose a letter from the list: "
+        //after checking the algorithm, comment 7 lines below. Leave just one line: algorithmStart()
+        double [][] dumpArr = {
+                {0.0, 3.0, 1000.0, 7.0},
+                {8.0, 0.0, 2.0, 1000.0},
+                {5.0, 1000, 0.0, 1.0},
+                {2.0, 1000.0, 1000.0, 0}
+        };
+
+        parentArr = dumpArr.clone();
        algorithmStart();
     }
 
     public static void algorithmStart() {
-        TSPFloydWarshall algorithm = new TSPFloydWarshall();
-        //read data from user. get nodes coordinates.
-        algorithm.userInput();
-        System.out.println();
-        //create matrix filled with distance between pair nodes
-        parentArr = Arrays.copyOf(fillInParentMatrix(parentList), fillInParentMatrix(parentList).length);
+        //uncomment lines down below before using the all features of algorithm
+//        TSPFloydWarshall algorithm = new TSPFloydWarshall();
+//        //read data from user. get nodes coordinates.
+//        algorithm.userInput();
+//        System.out.println();
+//        //create matrix filled with distance between pair nodes
+//        parentArr = Arrays.copyOf(fillInParentMatrix(parentList), fillInParentMatrix(parentList).length);
+
         printOutMatrix(parentArr);
         //read data from user regarding starting node
         char start = getStartPoint(parentArr);
